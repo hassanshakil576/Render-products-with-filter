@@ -61,9 +61,9 @@ body{
 
 /* Responsive */
 
-@media (max-width:756px){
+@media (max-width:820px){
     .card{
-        width: 50%;
+        width: 30%;
         font-size: .9rem;
     }
     .btn{
