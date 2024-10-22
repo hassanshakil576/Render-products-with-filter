@@ -225,32 +225,42 @@ const products = [
 ];
 
 let div = document.querySelector(".container");
+let div_btn = document.querySelector(".div-btn")
+const categories = [];
 
 function render(products){
     div.innerHTML = "";
-const iteratedArr = products.map(function(item){
-    div.innerHTML += `<div class="card">
-    <h2>Name: ${item.name}</h2>
-    <h2>Price:  ${item.price}</h2>
-    <h2>Category:  ${item.category}</h2>
-    <h2>Brand:  ${item.brand}</h2>
-    </div>` 
-})
+    const iteratedArr =  products.map(function(item){
+        div.innerHTML += ` <div class="card">
+            <h1>Name: ${item.name}</h1>
+            <h1>Category:  ${item.category}</h1>
+            <h1>Price:  ${item.price}</h1>
+            <h1>Brand:  ${item.brand}</h1>
+            <button class = "add-to-cart-btn">Add to cart</button>
+        </div>`
+    })
+    // console.log(iteratedArr);
 }
 
-render(products)
+render(products);
 
-const btn = document.querySelector(".btn");
 
-function filteredArr(btn){
-    const filteredProducts = products.filter(items => items.category === btn.innerHTML)
+
+products.map(function(products){
+    if(categories.indexOf(products.category) === -1){
+        categories.push(products.category);
+        div_btn.innerHTML += `<button class="button"  onclick="filteredArr('${products.category}')">${products.category}</button>`
+    }
+    })
+    console.log(categories);
+
+function filteredArr(button){
+    const filteredProducts = products.filter(item => item.category === button)
     console.log(filteredProducts);
-
     render(filteredProducts)
+    }
+
     
-}
-
-
 
 
 

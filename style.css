@@ -26,7 +26,7 @@ body{
     transform: translateY(-10px);
     transition-duration: 1s;
 }
-.btn{
+.div-btn{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -46,7 +46,6 @@ body{
     padding: 10px 15px;
     border-radius: 20px;
     cursor: pointer;
-    
 }
 .button:hover{
     background-color: #333333;
@@ -58,6 +57,18 @@ body{
     color: #646363;
     text-align: center;
 }
+.add-to-cart-btn{
+    background-color: #008080;
+    border: 1px solid #ffffff;
+    border-radius: 20px;
+    color: #000000;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+.add-to-cart-btn:hover{
+    background-color: #e4d611;
+    transition-duration: .8s;
+}
 
 /* Responsive */
 
@@ -66,7 +77,7 @@ body{
         width: 40%;
         font-size: .9rem;
     }
-    .btn{
+    .div-btn{
         flex-direction: column;
     }
     .button{
